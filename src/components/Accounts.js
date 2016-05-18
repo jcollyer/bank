@@ -1,24 +1,18 @@
-import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import Account from './Account.js'
 
 class Accounts extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
-    const { value } = this.props
-    return (
-      <p>
-        Account: {value} 
-      </p>
-    )
+    const { accounts }  = this.props;
+    return <Account account={accounts} />
+
   }
 }
 
 var mapStateToProps = function(appState){
 	return {
-		value: appState
+		accounts: appState.accounts
 	};
 };
 
