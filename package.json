@@ -1,21 +1,28 @@
 {
-  "name": "redux template",
+  "name": "redux bank",
   "version": "0.0.0",
-  "description": "Redux template counter app",
+  "description": "redux bank app",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "engine": {
+    "node": "5.1.1"
+  },
   "scripts": {
-    "start": "node server.js",
-    "test": "cross-env NODE_ENV=test mocha --recursive --compilers js:babel-register",
-    "test:watch": "npm test -- --watch"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/reactjs/redux.git"
+    "url": "git+https://github.com/jcollyer/bank.git"
   },
-  "license": "MIT",
+  "author": "jcollyer",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/reactjs/redux/issues"
+    "url": "https://github.com/jcollyer/bank/issues"
   },
-  "homepage": "http://redux.js.org",
+  "homepage": "https://github.com/jcollyer/bank#readme",
   "dependencies": {
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
