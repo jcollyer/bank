@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Account from './Account.js'
+import AccountListItem from './account-list-item.js'
 
 
-class Accounts extends Component {
+class AccountsList extends Component {
   render() {
     const { accounts } = this.props.accounts;
     return (
@@ -17,7 +17,7 @@ class Accounts extends Component {
         </thead>
         <tbody>
           {accounts.map((account, i) => {
-            return <Account key={i} account={account} />;
+            return <AccountListItem key={i} account={account} />;
           })}
         </tbody>
       </table>
@@ -31,4 +31,4 @@ var mapStateToProps = function(appState){
 	};
 };
 
-export default connect(mapStateToProps)(Accounts);
+export default connect(mapStateToProps)(AccountsList);
