@@ -12,5 +12,3 @@ export const initalState = {
     }
   ]
 }
-
-// export const initalState = "$500"

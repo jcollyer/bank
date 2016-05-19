@@ -1,9 +1,6 @@
 import { initalState } from './initial-state'
 
-export function accounts(state, action) {
-  if (typeof state === 'undefined') {
-    return initalState
-  }
+export default function accounts(state = initalState, action) {
   // switch (action.type) {
   //   case 'INCREMENT':
   //     return state + 1
