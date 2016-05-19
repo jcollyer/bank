@@ -7,11 +7,20 @@ class Accounts extends Component {
   render() {
     const { accounts } = this.props.accounts;
     return (
-      <div>
-        {accounts.map((account, i) => {
-          return <Account key={i} account={account} />;
-        })}
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <td>Account Name</td>
+            <td>Account Number</td>
+            <td>Account $</td>
+          </tr>
+        </thead>
+        <tbody>
+          {accounts.map((account, i) => {
+            return <Account key={i} account={account} />;
+          })}
+        </tbody>
+      </table>
     )
   }
 }
