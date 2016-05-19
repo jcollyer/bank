@@ -1,16 +1,10 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import Accounts from './components/Accounts'
-import rootReducer from './reducers'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store';
+import router from './router';
 
-const store = createStore(rootReducer)
-
-
-render(
-  <Provider store={store}>
-    <Accounts />
-  </Provider>,
+ReactDOM.render(
+  <Provider store={store}>{router}</Provider>,
   document.getElementById('app')
 );
