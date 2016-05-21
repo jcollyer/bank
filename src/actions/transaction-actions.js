@@ -7,4 +7,7 @@ export function showTransactionPanel(panelType) {
 export function hideTransactionPanel() {
   return { type: HIDE_TRANSACTION_PANEL }
 }
+
+export function addTransaction() {
+  return { type: ADD_TRANSACTION, transactionType, amount, accountId }
 }
