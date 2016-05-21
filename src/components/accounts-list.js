@@ -25,10 +25,10 @@ class AccountsList extends Component {
   }
 }
 
-var mapStateToProps = function(appState){
-	return {
-		accounts: appState.accounts
-	};
+const mapStateToProps = (appState) => {
+  return {
+    accounts: appState.accounts
+  };
 };
 
 export default connect(mapStateToProps)(AccountsList);

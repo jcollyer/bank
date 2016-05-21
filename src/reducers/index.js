@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import accounts from './accounts';
+import transactionsPanel from './transactionsPanel';
 
 const rootReducer = combineReducers({
-  accounts
+  accounts,
+  transactionsPanel
 });
 
 export default rootReducer;

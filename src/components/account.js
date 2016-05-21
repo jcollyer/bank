@@ -1,13 +1,25 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import store from '../store';
+import { showTransactionPanel, hideTransactionPanel} from '../actions/transaction-actions'
+import TransactionPanel from './transaction-panel'
 
 
 class Account extends Component {
   render() {
-    // debugger;
-    const account = this.props.account;
+    var panel;
+    const { account, transactionsPanel } = this.props;
+
+    if (transactionsPanel.length > 0) {
+      panel = (
+        <div>hello!</div>
+      );
+    }
     return (
       <div>
+        { panel }
+        <button onClick={() => store.dispatch(showTransactionPanel("Deposit")) }>Deposit $$</button>
+        <button>Withdraw $$</button>
         <li>{account.accountName}</li>
         <li>{account.amount}</li>
       </div>
@@ -15,10 +27,11 @@ class Account extends Component {
   }
 }
 
-var mapStateToProps = function(appState){
-	return {
-		account: appState.accounts.accounts[window.location.hash.split("/")[2].substring(0,1)]
-	};
-};
+const mapStateToProps = (appState) => {
+  return {
+    account: appState.accounts.accounts[window.location.hash.split("/")[2].substring(0,1)],
+    transactionsPanel: appState.transactionsPanel
+  }
+}
 
 export default connect(mapStateToProps)(Account);
