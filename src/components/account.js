@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import store from '../store';
-import { showTransactionPanel, hideTransactionPanel} from '../actions/transaction-actions'
+import { showTransactionPanel } from '../actions/transaction-actions'
 import TransactionPanel from './transaction-panel'
 
 
 class Account extends Component {
   render() {
     var panel;
-    const { account, transactionsPanel } = this.props;
+    const { account, transactionsPanel, params } = this.props;
 
     if (transactionsPanel.length > 0) {
       panel = (
-        <div>hello!</div>
+        <TransactionPanel />
       );
     }
     return (
