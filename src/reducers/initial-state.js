@@ -16,17 +16,20 @@ export const initialState = {
     {
       type: "deposit",
       amount: 350.00,
-      accountId: 0
+      accountId: 0,
+      date: new Date("5/16/16").toISOString().slice(0, 10).replace(/-/g,"/"),
     },
     {
       type: "deposit",
       amount: 110.00,
-      accountId: 1
+      accountId: 1,
+      date: new Date("5/18/16").toISOString().slice(0, 10).replace(/-/g,"/"),
     },
     {
       type: "withdrawal",
       amount: 240.00,
-      accountId: 0
+      accountId: 0,
+      date: new Date("5/21/16").toISOString().slice(0, 10).replace(/-/g,"/"),
     }
   ]
 }

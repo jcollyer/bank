@@ -7,7 +7,8 @@ export default function transactions(state = initialState.transactions, action) 
       const newTransaction = {
         type: action.transactionType,
         amount: action.amount,
-        accountId: action.accountId
+        accountId: action.accountId,
+        date: new Date().toISOString().slice(0, 10).replace(/-/g,"/")
       };
       return [...state, newTransaction];
     default:

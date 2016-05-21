@@ -9,7 +9,7 @@ class TransactionForm extends Component {
     return (
       <form onSubmit={handleSubmit}>
         <label>Amount</label>
-        <input type="text" placeholder="Amount" {...amount} />
+        <input type="number" placeholder="Amount" {...amount} />
 
         <div onClick={hideModal}>Cancel</div>
 

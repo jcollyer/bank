@@ -4,8 +4,8 @@ import { addTransaction, hideTransactionPanel } from '../actions/transaction-act
 import TransactionForm from './transaction-form'
 
 class TransactionPanel extends Component {
-  handleSubmit(data) {
-    store.dispatch(addTransaction(this.props.transactionsPanel, this.props.accountId, data.amount));
+  handleSubmit(stateData) {
+    store.dispatch(addTransaction(this.props.transactionsPanel, this.props.accountId, stateData.amount, stateData.date));
     store.dispatch(hideTransactionPanel());
   }
   render() {

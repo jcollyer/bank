@@ -20,7 +20,7 @@ class Account extends Component {
     return (
       <div>
         { panel }
-        <button onClick={() => store.dispatch(showTransactionPanel("deposit")) }>Deposit $$</button>
+        <button onClick={() => store.dispatch(showTransactionPanel("deposit"))}>Deposit $$</button>
         <button onClick={() => store.dispatch(showTransactionPanel("withdraw"))}>Withdraw $$</button>
         <li>{account.accountName}</li>
         <li>{account.amount}</li>
