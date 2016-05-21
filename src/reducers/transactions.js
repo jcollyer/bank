@@ -1,7 +1,7 @@
 import { ADD_TRANSACTION } from '../constants'
 import { initialState } from './initial-state'
 
-export default function transactions(state = initialState, action) {
+export default function transactions(state = initialState.transactions, action) {
   switch (action.type) {
     case ADD_TRANSACTION:
       const newTransaction = {

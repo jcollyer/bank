@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import { reduxForm } from 'redux-form';
+import store from '../store';
+import { addTransaction } from '../actions/transaction-actions'
 
 class TransactionForm extends Component {
   render() {
-    const { fields: { amount }, handleSubmit, hideModal } = this.props;
-
+    const { fields: { amount }, hideModal, handleSubmit } = this.props;
     return (
-      <form>
+      <form onSubmit={handleSubmit(data => {
+                store.dispatch(addTransaction("deposit", 1, data.amount))
+        })}>
         <label>Amount</label>
         <input type="text" placeholder="Amount" {...amount} />
 

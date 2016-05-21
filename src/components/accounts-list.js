@@ -5,7 +5,7 @@ import AccountListItem from './account-list-item.js'
 
 class AccountsList extends Component {
   render() {
-    const { accounts } = this.props.accounts;
+    const accounts = this.props.accounts;
     return (
       <table>
         <thead>
