@@ -14,17 +14,17 @@ export const initialState = {
   ],
   transactions: [
     {
-      type: "Deposit",
+      type: "deposit",
       amount: 350.00,
       accountId: 0
     },
     {
-      type: "Deposit",
+      type: "deposit",
       amount: 110.00,
       accountId: 1
     },
     {
-      type: "Withdrawal",
+      type: "withdrawal",
       amount: 240.00,
       accountId: 0
     }

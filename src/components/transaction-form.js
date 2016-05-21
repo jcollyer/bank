@@ -7,9 +7,7 @@ class TransactionForm extends Component {
   render() {
     const { fields: { amount }, hideModal, handleSubmit } = this.props;
     return (
-      <form onSubmit={handleSubmit(data => {
-                store.dispatch(addTransaction("deposit", 1, data.amount))
-        })}>
+      <form onSubmit={handleSubmit}>
         <label>Amount</label>
         <input type="text" placeholder="Amount" {...amount} />
 

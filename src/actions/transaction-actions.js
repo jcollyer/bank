@@ -8,6 +8,6 @@ export function hideTransactionPanel() {
   return { type: HIDE_TRANSACTION_PANEL }
 }
 
-export function addTransaction(transactionType, accountId, amount) {
+export function addTransaction(transactionType, accountId, amount) {  
   return { type: ADD_TRANSACTION, transactionType, accountId, amount }
 }

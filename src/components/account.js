@@ -4,6 +4,7 @@ import store from '../store';
 import { showTransactionPanel } from '../actions/transaction-actions'
 import TransactionPanel from './transaction-panel'
 import TransactionView from './transaction-view'
+import { addTransaction } from '../actions/transaction-actions'
 
 
 class Account extends Component {
@@ -13,14 +14,14 @@ class Account extends Component {
 
     if (transactionsPanel.length > 0) {
       panel = (
-        <TransactionPanel />
+        <TransactionPanel accountId={account.id} transactionsPanel={transactionsPanel} />
       );
     }
     return (
       <div>
         { panel }
-        <button onClick={() => store.dispatch(showTransactionPanel("Deposit")) }>Deposit $$</button>
-        <button>Withdraw $$</button>
+        <button onClick={() => store.dispatch(showTransactionPanel("deposit")) }>Deposit $$</button>
+        <button onClick={() => store.dispatch(showTransactionPanel("withdraw"))}>Withdraw $$</button>
         <li>{account.accountName}</li>
         <li>{account.amount}</li>
 
