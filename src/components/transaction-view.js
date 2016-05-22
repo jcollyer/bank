@@ -20,7 +20,7 @@ export default (props) => {
       <tbody>
       {transactions.map((transaction, i) => {
         return (
-          <tr key={i}>
+          <tr key={i} className={transaction.type === "deposit" ? "positive" : "negative"}>
             <td><i className="dollar icon"></i> {transaction.amount}</td>
             <td>{transaction.type}</td>
             <td>{transaction.date}</td>

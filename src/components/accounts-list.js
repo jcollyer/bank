@@ -9,12 +9,13 @@ class AccountsList extends Component {
     return (
       <div className="ui grid container">
         <div className="row">
+          <h1 class="ui header">Bank Accounts</h1>
           <table className="ui celled table">
             <thead>
               <tr>
                 <th>Account Name</th>
                 <th>Account Number</th>
-                <th>Account $</th>
+                <th>Dollars</th>
               </tr>
             </thead>
             <tbody>

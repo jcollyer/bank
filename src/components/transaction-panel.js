@@ -13,7 +13,11 @@ class TransactionPanel extends Component {
       <div className="ui grid container">
         <div className="row">
           <div className="column">
-            <h2 className="item">Transaction Panel</h2>
+            <br />
+            <h2>
+              <i className={this.props.transactionsPanel === "deposit" ? "plus icon" : "minus icon"}></i>
+              {this.props.transactionsPanel.toUpperCase()}
+            </h2>
             <TransactionForm onSubmit={this.handleSubmit.bind(this)} />
             <h4><button className="ui negative button" onClick={() => store.dispatch(hideTransactionPanel())}>
               <i className="remove circle icon"></i>

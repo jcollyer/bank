@@ -8,17 +8,19 @@ import { addTransaction } from '../actions/transaction-actions'
 
 
 class Account extends Component {
+  showTransactionPanel(transactionType) {
+    store.dispatch(showTransactionPanel(transactionType))
+  }
   render() {
     var panel;
     const { account, transactionsPanel, transactions, params } = this.props;
-
-    if (transactionsPanel.length > 0) {
+    // if (transactionsPanel.length > 0) {
       panel = (
-        <div className="ui visible left vertical sidebar wide menu">
+        <div id="transactions-panel" className={transactionsPanel.length > 0 ? "ui left vertical visible sidebar wide menu" : "ui left vertical sidebar wide menu"}>
           <TransactionPanel accountId={account.id} transactionsPanel={transactionsPanel} />
         </div>
       );
-    }
+    // }
     return (
       <div className="ui grid container">
         { panel }
@@ -26,8 +28,14 @@ class Account extends Component {
           <div className="column">
             <h1 className="ui header">{account.accountName}</h1>
             <p><i className="payment icon"></i>{account.accountNumber}</p>
-            <button className="ui positive button" onClick={() => store.dispatch(showTransactionPanel("deposit"))}><i className="plus icon"></i>Deposit</button>
-            <button className="ui negative button" onClick={() => store.dispatch(showTransactionPanel("withdraw"))}><i className="minus icon"></i>Withdraw</button>
+            <button className="ui positive button" onClick={this.showTransactionPanel.bind(null, "deposit")}>
+              <i className="plus icon"></i>
+              Deposit
+            </button>
+            <button className="ui negative button" onClick={this.showTransactionPanel.bind(null, "withdraw")}>
+              <i className="minus icon"></i>
+              Withdraw
+            </button>
           </div>
         </div>
 
@@ -37,7 +45,6 @@ class Account extends Component {
             <TransactionView transactions={transactions} id={account.id} />
           </div>
         </div>
-
       </div>
     )
   }

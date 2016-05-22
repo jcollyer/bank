@@ -5,6 +5,7 @@ import store from './store';
 import router from './router';
 
 import '../semantic/dist/semantic.min.css';
+import './style.less';
 
 ReactDOM.render(
   <Provider store={store}>{router}</Provider>,
