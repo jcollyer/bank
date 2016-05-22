@@ -2,12 +2,12 @@ export const initialState = {
   accounts: [
     {
       id: 0,
-      accountNumber: "111111",
+      accountNumber: "49088898990111",
       accountName: "Savings",
       amount: 5000
     },{
       id: 1,
-      accountNumber: "999999",
+      accountNumber: "33892878830009",
       accountName: "Checking",
       amount: 200
     }

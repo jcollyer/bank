@@ -8,12 +8,11 @@ class TransactionForm extends Component {
     const { fields: { amount }, hideModal, handleSubmit } = this.props;
     return (
       <form onSubmit={handleSubmit}>
-        <label>Amount</label>
-        <input type="number" placeholder="Amount" {...amount} />
-
-        <div onClick={hideModal}>Cancel</div>
-
-        <button type="submit">Submit</button>
+        <div className="ui action left icon input">
+          <i className="dollar icon"></i>
+          <input type="text" placeholder="Amount" {...amount} />
+          <button className="ui blue button" type="submit">Submit</button>
+        </div>
       </form>
     );
   }

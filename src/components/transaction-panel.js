@@ -10,10 +10,17 @@ class TransactionPanel extends Component {
   }
   render() {
     return (
-      <div>
-        <h4>Transaction Panel</h4>
-        <TransactionForm onSubmit={this.handleSubmit.bind(this)} />
-        <button onClick={() => store.dispatch(hideTransactionPanel())}>close</button>
+      <div className="ui grid container">
+        <div className="row">
+          <div className="column">
+            <h2 className="item">Transaction Panel</h2>
+            <TransactionForm onSubmit={this.handleSubmit.bind(this)} />
+            <h4><button className="ui negative button" onClick={() => store.dispatch(hideTransactionPanel())}>
+              <i className="remove circle icon"></i>
+              cancel
+            </button></h4>
+          </div>
+        </div>
       </div>
     )
   }

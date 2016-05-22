@@ -9,11 +9,11 @@ export default (props) => {
   })
 
   return(
-    <table>
+    <table className="ui celled table">
       <thead>
         <tr>
-          <th>Type</th>
           <th>Amount</th>
+          <th>Type</th>
           <th>Date</th>
         </tr>
       </thead>
@@ -21,8 +21,8 @@ export default (props) => {
       {transactions.map((transaction, i) => {
         return (
           <tr key={i}>
+            <td><i className="dollar icon"></i> {transaction.amount}</td>
             <td>{transaction.type}</td>
-            <td>{transaction.amount}</td>
             <td>{transaction.date}</td>
           </tr>
         );

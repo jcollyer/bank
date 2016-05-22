@@ -14,18 +14,30 @@ class Account extends Component {
 
     if (transactionsPanel.length > 0) {
       panel = (
-        <TransactionPanel accountId={account.id} transactionsPanel={transactionsPanel} />
+        <div className="ui visible left vertical sidebar wide menu">
+          <TransactionPanel accountId={account.id} transactionsPanel={transactionsPanel} />
+        </div>
       );
     }
     return (
-      <div>
+      <div className="ui grid container">
         { panel }
-        <button onClick={() => store.dispatch(showTransactionPanel("deposit"))}>Deposit $$</button>
-        <button onClick={() => store.dispatch(showTransactionPanel("withdraw"))}>Withdraw $$</button>
-        <li>{account.accountName}</li>
-        <li>{account.amount}</li>
+        <div className="row">
+          <div className="column">
+            <h1 className="ui header">{account.accountName}</h1>
+            <p><i className="payment icon"></i>{account.accountNumber}</p>
+            <button className="ui positive button" onClick={() => store.dispatch(showTransactionPanel("deposit"))}><i className="plus icon"></i>Deposit</button>
+            <button className="ui negative button" onClick={() => store.dispatch(showTransactionPanel("withdraw"))}><i className="minus icon"></i>Withdraw</button>
+          </div>
+        </div>
 
-        <TransactionView transactions={transactions} id={account.id} />
+
+        <div className="row">
+          <div className="center aligned starter column">
+            <TransactionView transactions={transactions} id={account.id} />
+          </div>
+        </div>
+
       </div>
     )
   }
