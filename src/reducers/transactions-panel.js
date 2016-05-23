@@ -1,12 +1,12 @@
-import { SHOW_TRANSACTION_PANEL, HIDE_TRANSACTION_PANEL } from '../constants';
+import { SHOW_TRANSACTION_PANEL, HIDE_TRANSACTION_PANEL } from '../constants'
 
 export default function transactionPanel(state = [], action) {
   switch (action.type) {
     case SHOW_TRANSACTION_PANEL:
-      return action.panelType;
+      return action.panelType
     case HIDE_TRANSACTION_PANEL:
-      return [];
+      return []
     default:
-      return state;
+      return state
   }
 }

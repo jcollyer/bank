@@ -5,11 +5,11 @@ import AccountListItem from './account-list-item.js'
 
 class AccountsList extends Component {
   render() {
-    const accounts = this.props.accounts;
+    const accounts = this.props.accounts
     return (
       <div className="ui grid container">
         <div className="row">
-          <h1 class="ui header">Bank Accounts</h1>
+          <h1 className="ui header">Bank Accounts</h1>
           <table className="ui celled table">
             <thead>
               <tr>
@@ -20,7 +20,7 @@ class AccountsList extends Component {
             </thead>
             <tbody>
               {accounts.map((account, i) => {
-                return <AccountListItem key={i} account={account} />;
+                return <AccountListItem key={i} account={account} />
               })}
             </tbody>
           </table>
@@ -33,7 +33,7 @@ class AccountsList extends Component {
 const mapStateToProps = (appState) => {
   return {
     accounts: appState.accounts
-  };
-};
+  }
+}
 
-export default connect(mapStateToProps)(AccountsList);
+export default connect(mapStateToProps)(AccountsList)

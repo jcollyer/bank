@@ -7,5 +7,5 @@ export default function Wrapper({ children }) {
       <Navigation />
       {children}
     </div>
-  );
-};
+  )
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import store from '../store';
+import store from '../store'
 import { showTransactionPanel } from '../actions/transaction-actions'
 import TransactionPanel from './transaction-panel'
 import TransactionView from './transaction-view'
@@ -12,15 +12,13 @@ class Account extends Component {
     store.dispatch(showTransactionPanel(transactionType))
   }
   render() {
-    var panel;
-    const { account, transactionsPanel, transactions, params } = this.props;
-    // if (transactionsPanel.length > 0) {
-      panel = (
-        <div id="transactions-panel" className={transactionsPanel.length > 0 ? "ui left vertical visible sidebar wide menu" : "ui left vertical sidebar wide menu"}>
-          <TransactionPanel accountId={account.id} transactionsPanel={transactionsPanel} />
-        </div>
-      );
-    // }
+    var panel
+    const { account, transactionsPanel, transactions, params } = this.props
+    panel = (
+      <div id="transactions-panel" className={transactionsPanel.length > 0 ? "ui left vertical visible sidebar wide menu" : "ui left vertical sidebar wide menu"}>
+        <TransactionPanel accountId={account.id} transactionsPanel={transactionsPanel} />
+      </div>
+    )
     return (
       <div className="ui grid container">
         { panel }
@@ -58,4 +56,4 @@ const mapStateToProps = (appState) => {
   }
 }
 
-export default connect(mapStateToProps)(Account);
+export default connect(mapStateToProps)(Account)

@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { reduxForm } from 'redux-form';
-import store from '../store';
+import { reduxForm } from 'redux-form'
+import store from '../store'
 import { addTransaction } from '../actions/transaction-actions'
 
 class TransactionForm extends Component {
   render() {
-    const { fields: { amount }, hideModal, handleSubmit } = this.props;
+    const { fields: { amount }, hideModal, handleSubmit } = this.props
     return (
       <form onSubmit={handleSubmit}>
         <div className="ui action left icon input">
@@ -14,13 +14,13 @@ class TransactionForm extends Component {
           <button className="ui blue button" type="submit">Submit</button>
         </div>
       </form>
-    );
+    )
   }
 }
 
 TransactionForm = reduxForm({
   form: 'transaction',
   fields: ['amount']
-})(TransactionForm);
+})(TransactionForm)
 
-export default TransactionForm;
+export default TransactionForm
