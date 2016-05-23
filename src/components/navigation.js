@@ -3,8 +3,8 @@ import { Link } from 'react-router';
 
 export default () => {
   return (
-    <div className="ui menu">
+    <nav className="ui menu">
       <Link to="/" className="brand item">Bank Accounts</Link>
-    </div>
+    </nav>
   );
 };

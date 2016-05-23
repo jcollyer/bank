@@ -10,8 +10,8 @@ export default function transactions(state = initialState.transactions, action) 
         accountId: action.accountId,
         date: new Date().toISOString().slice(0, 10).replace(/-/g,"/")
       };
-      return [...state, newTransaction];
+      return [...state, newTransaction]
     default:
-      return state;
+      return state
   }
 }
