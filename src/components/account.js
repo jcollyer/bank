@@ -13,7 +13,10 @@ class Account extends Component {
   }
   render() {
     var panel
-    const { account, transactionsPanel, transactions, params } = this.props
+    const { accounts, transactionsPanel, transactions, params } = this.props
+    const account = accounts[params.accountId]
+
+    debugger;
     panel = (
       <div id="transactions-panel" className={transactionsPanel.length > 0 ? "ui left vertical visible sidebar wide menu" : "ui left vertical sidebar wide menu"}>
         <TransactionPanel accountId={account.id} transactionsPanel={transactionsPanel} />
@@ -50,7 +53,7 @@ class Account extends Component {
 
 const mapStateToProps = (appState) => {
   return {
-    account: appState.accounts[window.location.hash.split("/")[2].substring(0,1)],
+    accounts: appState.accounts,
     transactionsPanel: appState.transactionsPanel,
     transactions: appState.transactions
   }
